@@ -1,0 +1,108 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsfonts,amsmath}
+\usepackage{graphicx,float}
+% -----------------------------------
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  linkbordercolor={0 0 1}
+}
+% -----------------------------------
+\usepackage[style=authoryear-icomp,backend=biber]{biblatex}
+\addbibresource{citation.bib}
+% -----------------------------------
+\usepackage{fancyhdr}
+\newcommand\course{MATH-UA.0325\\Analysis}
+\newcommand\hwnumber{3}                  % <-- homework number
+\newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
+\newcommand\NetIDb{February 16th, 2024}
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa\\\NetIDb}
+\chead{\textbf{\Large Worksheet \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+% -----------------------------------
+\usepackage{titlesec}
+\renewcommand\thesubsection{(\arabic{section}.\alph{subsection})}
+\titleformat{\subsection}[runin]
+        {\normalfont\bfseries}
+        {\thesubsection}% the label and number
+        {0.5em}% space between label/number and subsection title
+        {}% formatting commands applied just to subsection title
+        []% punctuation or other commands following subsection title
+% -----------------------------------
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+% -----------------------------------
+\input{../../command.tex}
+\begin{document}
+
+\section{}
+Let $A$ be a non-empty bounded subset of $\mathbb{R}$ and suppose $\sup A \notin A$. Show that there exists an increasing sequence of points $\{a_n\}_{n\geq 1}$ in $A$ such that $\lim_{n\to\infty} a_n = A$.
+
+\section{}
+Let $S$ be a non-empty bounded subset of $\mathbb{R}$.
+\subsection{} Prove that $\inf S\leq \sup S$.
+\subsection{} What can you say about $S$ if $\inf S= \sup S$.
+
+\section{}
+Let $A$ be a non-empty subset of $\mathbb{R}$ which is bounded below and let
+\begin{align}
+    -A = \{-a:a\in A\}.
+\end{align}
+Prove that $\inf A = -\sup(-A)$.
+
+\section{}
+Let $S$ and $T$ be two non-empty bounded subsets of $\mathbb{R}$ and let
+
+\subsection{} [Exercise 1.1.4 of \cite{Lebl_23}] Prove that if $S \subset T$, then $\inf T \leq \inf S \leq \sup S \leq \sup T$.
+
+\subsection{} Prove that $\sup(S\cup T) = \max\{\sup(S),\sup(T)\}$. 
+
+\section{}
+\subsection{} [Proposition 2.2.7 of \cite{Lebl_23}] Show that if a sequence $\{a_n\}_{n\in\mathbb{N}}$ of real numbers converges to $a$, then the sequence $\{|a_n|\}_{n\in\mathbb{N}}$ converges to $|a|$. 
+\subsection{} Show (via an example) that the converse is not true.
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a sequence of positive numbers. Show that
+\begin{align}
+    \lim_{n\to\infty}\frac{1}{a_n} = \infty \iff \lim_{n\to\infty}a_n = 0.
+\end{align}
+
+\section{}
+Show that the sequence
+\begin{align}
+    \lim_{n\to\infty} \left(\sqrt{n^2+n}-n\right) = \frac{1}{2}. 
+\end{align}
+
+\section{}
+[Exercise 2.2.12 of \cite{Lebl_23}] Let $\{a_n\}_{n\geq 1}$ and $\{b_n\}_{n\geq 1}$ be two sequences of real numbers such that $\{a_n\}_{n\geq 1}$ is bounded and $\{b_n\}_{n\geq 1}$ converges to $0$. Show that the sequence $\{a_nb_n\}_{n\geq 1}$ converges to 0.
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a convergent sequence of real numbers and let $a\in\mathbb{R}$ such that $\lim_{n\to\infty} a_n>a$. Show that there exists $n_0 \in \mathbb{N}$ such that $a_n > a$ for all
+$n > n_0$.
+
+% \section{}
+% Let $\{a_n\}_{n\geq 1}$, $\{c_n\}_{n\geq 1}$, and $\{b_n\}_{n\geq 1}$ three convergent sequences of real numbers such that 
+% \begin{align}
+%     \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n \qdt{and} a_n\leq b_n\leq c_n \text{ for all }n\geq 1.
+% \end{align}
+% Show that
+% \begin{align}
+%     \lim_{n\to\infty} b_n = \lim_{n\to\infty} a_n
+% \end{align}
+
+\vfill
+\printbibliography
+
+
+\end{document}
