@@ -1,0 +1,197 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsfonts,amsmath,amsthm}
+\usepackage{graphicx,float}
+% -----------------------------------
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  linkbordercolor={0 0 1}
+}
+% -----------------------------------
+\usepackage[style=authoryear-icomp,backend=biber]{biblatex}
+\addbibresource{citation.bib}
+% -----------------------------------
+\usepackage{fancyhdr}
+\newcommand\course{MATH-UA.0325\\Analysis}
+\newcommand\hwnumber{4 Solutions}                  % <-- homework number
+\newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
+\newcommand\NetIDb{February 23rd, 2024}
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa\\\NetIDb}
+\chead{\textbf{\Large Worksheet \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+% -----------------------------------
+\usepackage{titlesec}
+\renewcommand\thesubsection{(\arabic{section}.\alph{subsection})}
+\titleformat{\subsection}[runin]
+        {\normalfont\bfseries}
+        {\thesubsection}% the label and number
+        {0.5em}% space between label/number and subsection title
+        {}% formatting commands applied just to subsection title
+        []% punctuation or other commands following subsection title
+% -----------------------------------
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+% -----------------------------------
+\input{../../command.tex}
+\begin{document}
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a Cauchy sequence of real numbers. Show that
+$\{a_n^2\}_{n\geq 1}$ is also a Cauchy sequence.
+
+\begin{proof}
+Since $\{a_n\}_{n\geq 1}$ is Cauchy, we know that it is bounded by $A\in\mathbb{R}$. Additionally, for all $\epsilon>0$ there exists $N_{\epsilon}\in \mathbb{N}$ s.t.
+\begin{align*}
+    |a_n-a_m|<\frac{\epsilon}{2A} \qdt{for all} n,m\geq N_\epsilon.
+\end{align*}
+Then we have for all $n,m \geq N_{\epsilon}$
+\begin{align*}
+    |a_n^2-a_m^2|=|a_n+a_m||a_n-a_m|< 2A\cdot \frac{\epsilon}{2A} = \epsilon
+\end{align*}
+This work for all $\epsilon>0$ so the sequence $\{a_n^2\}_{n\geq 1}$ is also Cauchy. 
+\end{proof}
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a sequence defined by the following rule:
+\begin{align}
+    a_1 = 3 \qdt{and} a_{n+1}=\frac{a_n}{2}+\frac{1}{a_n} \qdt{for all} n\geq 1.
+\end{align}
+
+\subsection{} Show that the sequence is bounded below by $\sqrt{2}$.
+\begin{proof}
+It is clear that the sequence is positive. Then we see 
+\begin{align*}
+    a_{n+1}-\sqrt{2} = \frac{a_n}{2}+\frac{1}{a_n}-\sqrt{2} = \frac{a_n^2+2-2\sqrt{2}a_n}{2a_n} = \frac{(a_n-\sqrt{2})^2}{2a_n} >0.
+\end{align*}
+Therefore $a_n>\sqrt{2}$ for all $n$.
+\end{proof}
+
+\subsection{} Show that this is a sequence of rational numbers.
+\begin{proof}
+The set $\mathbb{Q}$ is a field and has the closure property. Therefore $a_n\in\mathbb{Q}$ for all $n$.
+\end{proof}
+
+\subsection{} Prove that the sequence is monotonically decreasing.
+\begin{proof}
+For all $n\in \mathbb{N}$
+\begin{align*}
+    a_{n+1}-a_n = \frac{-a_n}{2}+\frac{1}{a_n} = \frac{-a_n^2+2}{2a_n}<0
+\end{align*}
+where we used the fact that $a_n > \sqrt{2}$. $\{a_n\}_{n\in \mathbb{N}}$ is monotonically decreasing.
+\end{proof}
+
+\subsection{} Deduce that $\{a_n\}_{n\geq 1}$ converges and find its limit.
+\begin{proof}
+$\{a_n\}_{n\in \mathbb{N}}$ is bounded and monotonically decreasing therefore it converges.
+
+We name $\lim_{n\rightarrow \infty}a_n = a$. By the recurrence relation $a$ needs to satisfy
+\begin{align}
+    a=\frac{a}{2}+\frac{1}{a}
+\end{align}
+which has positive solution $\sqrt{2}$. Thus, $\lim_{n\rightarrow \infty}a_n = \sqrt{2}$.
+\end{proof}
+
+Remark: This is an example of Cauchy sequence of rational numbers
+converging to an irrational number.
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ and $\{b_n\}_{n\geq 1}$ be two bounded sequences. Show that
+\begin{align}
+    \limsup_{n\to\infty} (a_n+b_n) \leq \limsup_{n\to\infty} a_n+\limsup_{n\to\infty} b_n.
+\end{align}
+
+\begin{proof}
+By definition, 
+\begin{align*}
+    \limsup_{n\rightarrow\infty}(a_n+b_n) &= \lim_{N\rightarrow\infty} \sup \{(a_n+b_n), n\geq N\}\\
+    \limsup_{n\rightarrow\infty}a_n &= \lim_{N\rightarrow\infty} \sup \{a_n, n\geq N\}\\
+    \limsup_{n\rightarrow\infty}b_n &= \lim_{N\rightarrow\infty} \sup \{b_n, n\geq N\}.
+\end{align*}
+We name $A_N = \sup \{a_n, n\geq N\}$ and $B_N = \sup \{b_n, n\geq N\}$. Then for all $n\geq N$, $A_N\geq a_n$, $B_N\geq b_n$, and thus $A_N+B_N\geq a_n+b_n$. $A_N+B_N$ is an upper bound of $\{a_n+b_n, n\geq N\}$. \\
+Since $\sup \{a_n+b_n, n\geq N\}$ is the least upper bound 
+\begin{align*}
+    &A_N+B_N\geq \sup \{a_n+b_n, n\geq N\}\\
+    \thus &\sup \{a_n, n\geq N\}+\sup \{b_n, n\geq N\} \geq \sup \{a_n+b_n, n\geq N\}.
+\end{align*}
+
+We can take the limit to infinity of both sides and we have 
+$$\lim_{N\rightarrow\infty} \sup \{(a_n+b_n), n\geq N\}\leq \lim_{N\rightarrow\infty} \left(\sup \{a_n, n\geq N\}+\sup \{b_n, n\geq N\}\right).$$ Because both $\sup$ are bounded 
+\begin{align*}
+    &\lim_{N\rightarrow\infty} \left(\sup \{a_n, n\geq N\}+\sup \{b_n, n\geq N\}\right)=\lim_{N\rightarrow\infty} \sup \{a_n, n\geq N\}+\lim_{N\rightarrow\infty} \sup \{b_n, n\geq N\} \\
+    \thus &\limsup_{n\rightarrow\infty}(a_n+b_n) \leq \limsup_{n\rightarrow\infty}a_n+\limsup_{n\rightarrow\infty}b_n.
+\end{align*}
+\end{proof}
+
+% \section{}
+% Let $\{a_n\}_{n\geq 1}$ and $\{b_n\}_{n\geq 1}$ be two bounded sequences of non-negative numbers. Show that
+% \begin{align}
+%     \limsup_{n\to\infty} (a_nb_n) \leq (\limsup_{n\to\infty} a_n)(\limsup_{n\to\infty} b_n).
+% \end{align}
+
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a sequence of real numbers that is bounded above.
+Prove that $L = \limsup a_n$ has the following properties:
+
+\subsection{} \label{sec:4a}
+For every $\epsilon > 0$ there are only finitely many $n$ for which $a_n>L+\epsilon$.
+
+\begin{proof}
+Name $v_N = \sup\{a_n, n\geq N\}$. Then by definition $L = \limsup a_n = \lim_{N\rightarrow \infty}v_N$. We also know that if $\{v_N\}_{N\geq 1}$ is a decreasing sequence and $v_n\geq L$.
+
+For all $\epsilon>0$, there exists $N\in \mathbb{N}$ s.t. for all $n\geq N$, 
+\begin{align*}
+    &|v_n-L|<\epsilon \\
+    \thus &v_n<L+\epsilon\\
+    \thus &\sup\{a_m, m\geq n\}<L+\epsilon\\
+    \thus &a_n<L+\epsilon.
+\end{align*}
+This leaves only some or all $a_n, n<N$ (only finitely amount) that could have
+$$a_n>L+\epsilon.$$
+\end{proof}
+
+\subsection{} For every $\epsilon > 0$ there are infinitely many $n$ for which $a_n>L-\epsilon$.
+\begin{proof}
+We know there exists a subsequence $\{a_{k_n}\}_{n\geq 1}$ that converges to $L$. Then for all $\epsilon>0$, $\exists N\in\mathbb{N}$ s.t. for all $n\geq N$
+\begin{align*}
+    |a_{k_n}-L|<\epsilon \Rightarrow L-\epsilon<a_{k_n}
+\end{align*}
+This means there are infinitely many $a_{k_n}$ thus $a_{n}$ larger than $L-\epsilon$.
+\end{proof}
+
+Remark: It is also true that there can be at most one real number with both of the above two properties.
+
+\section{}
+Show that a sequence $\{a_n\}_{n\geq 1}$ is bounded if and only if $\limsup_{n\to\infty} |a_n|<\infty$.
+
+\begin{proof}
+"$\Rightarrow$": We know 
+\begin{align*}
+    \limsup_{n\to\infty} |a_n| \leq \sup \{|a_n|, n\geq 1\}.
+\end{align*}
+However the RHS is bounded because $\{a_n\}_{n\geq 1}$ is bounded.
+
+"$\Leftarrow$": We know from Problem \ref{sec:4a} that for $\epsilon = 1$ there are only finitely many $n$ for which $|a_n|>\limsup_{n\to\infty} |a_n|+1$. Then for some finite $N$
+\begin{align}
+    \sup_{n} \{|a_n|\} \leq \max\{a_1,\dots,a_N,\limsup_{n\to\infty} |a_n|+1\}.
+\end{align}
+This is finite because it is a maximum over finite elements. Finally, $\sup_{n} \{|a_n|\}<\infty$ implies the sequence is bounded.
+
+\end{proof}
+
+
+\vfill
+\printbibliography
+
+
+\end{document}
