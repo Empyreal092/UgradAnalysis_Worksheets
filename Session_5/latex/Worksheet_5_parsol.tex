@@ -1,0 +1,86 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsfonts,amsmath,amsthm}
+\usepackage{graphicx,float}
+% -----------------------------------
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  linkbordercolor={0 0 1}
+}
+% -----------------------------------
+\usepackage[style=authoryear-icomp,backend=biber]{biblatex}
+\addbibresource{citation.bib}
+% -----------------------------------
+\usepackage{fancyhdr}
+\newcommand\course{MATH-UA.0325\\Analysis}
+\newcommand\hwnumber{5 Partial Solutions}                  % <-- homework number
+\newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
+\newcommand\NetIDb{March 1st, 2024}
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa\\\NetIDb}
+\chead{\textbf{\Large Worksheet \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+% -----------------------------------
+\usepackage{titlesec}
+\renewcommand\thesubsection{(\arabic{section}.\alph{subsection})}
+\titleformat{\subsection}[runin]
+        {\normalfont\bfseries}
+        {\thesubsection}% the label and number
+        {0.5em}% space between label/number and subsection title
+        {}% formatting commands applied just to subsection title
+        []% punctuation or other commands following subsection title
+% -----------------------------------
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+% -----------------------------------
+\input{../../command.tex}
+\begin{document}
+
+\setcounter{section}{3}
+\section{}
+Let $\{a_n\}_{n\geq 1}$ be a decreasing sequence of non-negative numbers such
+that $\sum_{n\geq 1} a_n<\infty$. Show that
+\begin{align}
+    \lim_{n\to\infty} na_n = 0.
+\end{align}
+
+\begin{proof}
+Pick any $\epsilon>0$. Because $\sum_{n\geq 1}\{a_n\}$ converges, by the Cauchy criterion, there exists $N_1\in\mathbb{N}$ such that for all $p>0$,
+\begin{align}
+    \sum_{N_1+1}^{N_1+p}a_n<\frac{\epsilon}{2}.
+\end{align}
+Because $\{a_n\}_{n\geq 1}$ is decreasing, 
+\begin{align}
+    pa_{N_1+p}\leq\sum_{N_1+1}^{N_1+p}a_n<\frac{\epsilon}{2}.
+\end{align}
+
+Moreover, the sequence $\{a_n\}_{n\geq 1}$ converges to 0. There exists $N_2\in\mathbb{N}$ s.t. for all $p\geq N_2$, 
+\begin{align}
+    &a_{N_1+p}<\frac{\epsilon}{2N_1}\\
+    \thus &N_1 a_{N_1+p}<\frac{\epsilon}{2}.
+\end{align}
+
+Adding two together we have, for all $p\geq N_2$, 
+\begin{align}
+    (N_1+p)a_{N_1+p}<\epsilon
+\end{align}
+Change of variable, we have for all $m\geq N_1+N_2$, $ma_m<\epsilon$. This proves $\lim_{n\rightarrow\infty}na_n = 0$. 
+
+\end{proof}
+
+
+% \vfill
+% \printbibliography
+
+
+\end{document}
