@@ -18,9 +18,9 @@
 % -----------------------------------
 \usepackage{fancyhdr}
 \newcommand\course{MATH-UA.0325\\Analysis}
-\newcommand\hwnumber{5}                  % <-- homework number
+\newcommand\hwnumber{8}                  % <-- homework number
 \newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
-\newcommand\NetIDb{March 1st, 2024}
+\newcommand\NetIDb{March 29th, 2024}
 \pagestyle{fancyplain}
 \headheight 35pt
 \lhead{\NetIDa\\\NetIDb}
@@ -46,68 +46,44 @@
 \input{../../command.tex}
 \begin{document}
 
-\section{}
-Study the convergence of the series
+\section{} [Exercise 3.2.1 of \cite{Lebl_23}] 
+Using the definition of continuity directly prove that $f: \mathbb{R}\to \mathbb{R}$ defined by $f(x) := x^2$ is continuous.
+
+\section{} [Exercise 3.2.4 and 3.2.4 of \cite{Lebl_23}] 
+Is $f: \mathbb{R}\to \mathbb{R}$ continuous? Prove your assertion.
 
 \subsection{}
 \begin{align}
-    \sum_{n\geq 1}\frac{n^5}{3^n}.
+    f(x) := \begin{cases}
+        \sin(1/x) &\text{if } x\neq 0,\\
+        0  &\text{if } x= 0.
+    \end{cases}
 \end{align}
 
 \subsection{}
 \begin{align}
-    \sum_{n\geq 1}\frac{3^n}{n!}.
+    f(x) := \begin{cases}
+        x\sin(1/x) &\text{if } x\neq 0,\\
+        0  &\text{if } x= 0.
+    \end{cases}
 \end{align}
 
-\subsection{}
-\begin{align}
-    \sum_{n\geq 1}\cos(n).
-\end{align}
+\section{} [Exercise 3.2.14 of \cite{Lebl_23}] 
+Suppose $f:[-1,0]\to \mathbb{R}$ and $g:[-1,0]\to \mathbb{R}$ are continuous and $f(0)=g(0)$. Define $h:[-1,0]\to \mathbb{R}$ by $h(x) := f(x)$ if $x\leq 0$ and $h(x):= g(x)$ if $x>0$. Show that $h$ is continuous.
 
-\subsection{}
-\begin{align}
-    \sum_{n\geq 1}\frac{1}{[n+(-1)^n]^2}.
-\end{align}
+\section{} [Exercise 3.2.10 of \cite{Lebl_23}] 
+Let $f:\mathbb{R}\to \mathbb{R}$ and $g:\mathbb{R}\to \mathbb{R}$ be continuous functions. Suppose that $f(r)=g(r)$ for all $r\in\mathbb{Q}$. Show that $f(x)=g(x)$ for all $x\in\mathbb{R}$. 
 
-\subsection{}
-\begin{align}
-    \sum_{n\geq 1}\frac{n!}{n^n}.
-\end{align}
+\section{} [Exercise 3.4.7 of \cite{Lebl_23}]
+Let $f:(0,1)\to \mathbb{R}$ be a bounded continuous function. Show that the function $g(x):= x(1-x)f(x)$ is uniformly continuous.
 
-\subsection{}
-\begin{align}
-    \sum_{n\geq 2}\frac{1}{(\log_2 n)^{\log_2 n}}.
-\end{align}
-
-\subsection{}
-\begin{align}
-    \sum_{n\geq 1}\frac{(-1)^n n!}{2^n}.
-\end{align}
-
-\section{}
-% [The Abel criterion] 
-Let $\{a_n\}_{n\geq 1}$ be a decreasing sequence with $\lim_{n\to\infty} a_n=0$. Let $\{b_n\}_{n\geq 1}$ be a sequence of real numbers such that $\{\sum_{k=1}^n b_k\}_{n\geq 1}$ is bounded. Then $\sum_{n\geq 1} a_nb_n$ converges.
-
-\section{}
-\subsection{}
-Give an example of a divergent series $\sum_{n\geq 1} a_n$ for which $\sum_{n\geq 1} a_n^2$ converges.
-
-\subsection{}
-Show that if $\sum_{n\geq 1} a_n$ is absolutely convergent, then the series $\sum_{n\geq 1} a_n^2$ also converges.
-
-\subsection{}
-Give an example of a convergent series $\sum_{n\geq 1} a_n$, for which $\sum_{n\geq 1} a_n^2$ diverges.
-
-\section{}
-Let $\{a_n\}_{n\geq 1}$ be a decreasing sequence of non-negative numbers such
-that $\sum_{n\geq 1} a_n<\infty$. Show that
-\begin{align}
-    \lim_{n\to\infty} na_n = 0.
-\end{align}
+\section{} [Exercise 3.2.16 of \cite{Lebl_23}]
+Suppose $f:\mathbb{R}\to \mathbb{R}$ is continuous at 0 and such that $f(x+y)=f(x)+f(y)$ for every $x$ and $y$. Show that $f(x)=ax$ for some $a\in\mathbb{R}$. Hint: Show that $f(nx)=nf(x)$, then show $f$ is
+continuous on $\mathbb{R}$. Then show that $f(x)/x=f(1)$ for all rational $x$.
 
 
-% \vfill
-% \printbibliography
+\vfill
+\printbibliography
 
 
 \end{document}
