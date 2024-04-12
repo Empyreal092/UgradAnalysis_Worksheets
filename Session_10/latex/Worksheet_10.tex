@@ -18,9 +18,9 @@
 % -----------------------------------
 \usepackage{fancyhdr}
 \newcommand\course{MATH-UA.0325\\Analysis}
-\newcommand\hwnumber{9}                  % <-- homework number
+\newcommand\hwnumber{10}                  % <-- homework number
 \newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
-\newcommand\NetIDb{April 5th, 2024}
+\newcommand\NetIDb{April 12th, 2024}
 \pagestyle{fancyplain}
 \headheight 35pt
 \lhead{\NetIDa\\\NetIDb}
@@ -46,28 +46,55 @@
 \input{../../command.tex}
 \begin{document}
 
-\section{} [Exercise 4.1.9 of \cite{Lebl_23}] 
-Suppose $f:\mathbb{R}\to\mathbb{R}$ is a differentiable Lipschitz continuous function. Prove that $f'$ is a bounded function.
+\section{}
 
-\section{} [Exercise 4.1.11 of \cite{Lebl_23}] 
-Suppose $f:I\to\mathbb{R}$ is bounded, $g:I\to\mathbb{R}$ is differentiable at $c\in I$, and $g(c)=g'(c)=0$. Show that $h(x):=f(x)g(x)$ is differentiable at $c$. Hint: You cannot apply the product rule.
+\subsection{} [Exercise 4.2.4 of \cite{Lebl_23}] 
+Let $f:[a,b]\to\mathbb{R}$ be differentiable and let $c\in[a,b]$. Show there exists a sequence $\{x_n\}^\infty_{n=1}$ converging to $c$, $x_n\neq c$ such that
+\begin{align}
+    f'(c) = \lim_{n\to\infty} f'(x_n).
+\end{align}
 
-\section{} [Exercise 4.1.13 of \cite{Lebl_23}] 
-Suppose $f:(-1,1)\to\mathbb{R}$ is a function such that $f(x)=xh(x)$ for a bounded function $h$.
+Do note this does not imply that $f'(x)$ is continuous (why?).
 
-\subsection{}
-Show that $g(x):=(f(x))^2$ is differentiable at the origin and $g'(0)=0$.
+\subsection{} 
+Suppose that $\lim_{x\to c} f'(x)$ exists and is finite. Show this limit must be $f'(c)$.
 
-\subsection{}
-Find an example of a continuous function $f:(-1,1)\to\mathbb{R}$ with $f(0) = 0$, but such that $g(x):= (f(x))^2$ is not differentiable at the origin.
+\section{} [Exercise 4.2.10 of \cite{Lebl_23}] 
+Let $f:(a,b)\to\mathbb{R}$ be an unbounded differentiable function. Show $f':(a,b)\to\mathbb{R}$ is unbounded.
 
-\section{} [Exercise 4.1.16 of \cite{Lebl_23}] 
-Suppose $f:(a,b)\to\mathbb{R}$ is differentiable at $c\in(a,b)$, $f(c)=0$, and $f'(c)> 0$. Prove that there is a $\delta>0$ such that $f(x)<0$ whenever $c-\delta<x<c$ and $f(x)>0$ whenever $c<x<c+\delta$.
+\section{}
+Let $f:[a,b]\to\mathbb{R}$ be differentiable. Assume that $f'$ is strictly increasing. Show that for any $c\in [a,b]$ such that $f'(c)=0$ there exist $x_1,x_2\in[a,b]$$, x_1<c<x_2$ such that
+\begin{align}
+    0 = f'(c) = \frac{f(x_2)-f(x_1)}{x_2-x_1}.
+\end{align}
 
-\section{} [Exercise 4.4.6 of \cite{Lebl_23}] 
-Let $f(x):= x+2x^2\sin(1/x)$ for $x\neq 0$ and $f(0):= 0$. Show that $f$ is differentiable at all $x$, that $f'(0)>0$, but that $f$ is not invertible on any open interval containing the origin.
+\section{}
+Assume $f:(1,\infty)\to\mathbb{R}$ is differentiable. If
+\begin{align}
+    \lim_{x\to\infty} f(x)=1 \qdt{and} \lim_{x\to\infty} f'(x)=c,
+\end{align}
+prove that $c=0$.
 
+\section{}
+Let $f:(0,1)\to\mathbb{R}$ be differentiable function such that
+\begin{align}
+    |f'(x)|<1 \qdt{for all} x\in(0,1).
+\end{align}
+For $n\geq 2$ let $a_n = f(1/n)$. Show that
+\begin{align}
+    \lim_{n\to\infty} a_n
+\end{align}
+exists.
 
+\section{}
+Let $f:[0,1]\to\mathbb{R}$ be continuous and be differentiable on $(0,1)$. Assume that $f(0) = 0$ and $f'$ is an increasing function on $(0,1)$. Show that
+\begin{align}
+    g(x)=\frac{f(x)}{x}
+\end{align}
+is an increasing function on $(0,1)$.
+
+\section{}
+Let $f:[a,b]\to\mathbb{R}$ be continuous and be differentiable on $(a,b)$, with $f(a) = f(b) = 0$. Prove that for every $\lambda\in\mathbb{R}$ there exists $x_0\in(a,b)$ such that $f'(x_0)=\lambda f(x_0)$.
 
 
 \vfill
