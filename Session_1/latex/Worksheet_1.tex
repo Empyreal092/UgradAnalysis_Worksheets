@@ -17,7 +17,7 @@
 \newcommand\course{MATH-UA.0325\\Analysis}
 \newcommand\hwnumber{1}                  % <-- homework number
 \newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
-\newcommand\NetIDb{February 2nd, 2024}
+\newcommand\NetIDb{September 12th, 2024}
 \pagestyle{fancyplain}
 \headheight 35pt
 \lhead{\NetIDa\\\NetIDb}
@@ -43,48 +43,113 @@
 \input{../../command.tex}
 \begin{document}
 
-\section{}
-Show that the following two statements are equivalent:
+\section{De Morgan's laws}
+Let $X$ be a universe set, and $A, B \subset X$ subsets of it. Recall that in this case we simply denote $X \setminus A$ by $A^c$. 
 
 \subsection{}
-\begin{enumerate}
-    \item $f: B\to C$ is injective.
-    \item For any set $A$ and any two functions $g,h: A\to B$ such that $f\circ g = f\circ h$, we must have $g=h$. 
-\end{enumerate}
+Show the De Morgan's laws which state that
+\begin{itemize}
+    \item The complement of the union is the intersection of complements. That is, $(A \cup B)^c = A^c \cap B^c$.
+    \item The complement of the intersection is the union of complements. That is, $(A \cap B)^c = A^c \cap B^c$.
+\end{itemize}
 
 \subsection{}
-\begin{enumerate}
-    \item $f: A\to B$ is surjective.
-    \item For any set $C$ and any two functions $g,h: B\to C$ such that $g\circ f = h\circ f$, we must have $g=h$. 
-\end{enumerate}
+Show De Morgan's laws for infinite unions and intersections. That is, if $A_n \subset X$ is a collection of sets for $n \in \mathbb N$
+\begin{itemize}
+\item $\left( \bigcup_{n=1}^\infty A_n \right)^c = \bigcap_{n=1}^\infty A_n^c$.
+\item $\left( \bigcap_{n=1}^\infty A_n \right)^c = \bigcup_{n=1}^\infty A_n^c$.
+\end{itemize}
 
-\section{}
-Let $f: A\to B$ and $g: B\to C$ be two bijective functions.  Show $g\circ f$ is bijective.
+\section{Some Logic}
+Here we will do some logic that will benefit proof construction.
 
-\section{}
-Let $f: A\to B$, $C, D\subset A$, and $P, Q\subset B$. In lecture, you learned 
+\subsection{De Morgan's laws for statements}
+If $P$ is some sentence or formula, then $\neg P$ is called the denial of $P$. Convince yourself that the following are tautologies:
 \begin{align}
-    f(C\cup D) = f(C)\cup f(D).
+    &\neg (P \text{ or } Q) \Leftrightarrow (\neg P \text{ and } \neg Q);\\
+    &\neg (P \text{ and } Q) \Leftrightarrow (\neg P \text{ or } \neg Q).
 \end{align}
 
+\subsection{}
+We often deal with statements like $P$ implies $Q$. Convince yourself that 
+\begin{align}
+    P \Rightarrow Q \Leftrightarrow \neg P \text{ or } Q.
+\end{align}
+Use this to show 
+\begin{align}
+    P \Rightarrow Q \Leftrightarrow \neg Q \Rightarrow \neg P.
+\end{align}
+The second statement is the contrapositive of the first. It is sometimes easier to prove the second statement, which we also call prove by contradiction. 
+
+Use the above De Morgan's laws for statements to show that 
+\begin{align}
+    \neg (P \Rightarrow Q) \Leftrightarrow P \text{ and } \neg Q.
+\end{align}
+
+\subsection{}
+There are versions of De Morgan's laws for quantifiers: 
+\begin{align}
+    \neg ( \forall x\;P(x) ) \Leftrightarrow \exists x\;\neg P(x);\\
+    \neg ( \exists x\;P(x) ) \Leftrightarrow \forall x\;\neg P(x).
+\end{align}
+
+\subsection{}
+Try to negate this sentence!
+\begin{align}
+    \forall \epsilon>0, \exists \delta>0, \forall x, |x|<\delta \Rightarrow |f(x)|<\epsilon.
+\end{align}
+This is essentially the infamous $\epsilon-\delta$ definition of continuity we will learn later in this class.
+
+\section{}
+Let $f: X\to Y$, $A, B\subset X$, and $P, Q\subset Y$. 
+
+\subsection{}
 Show
 \begin{align}
-    &f(C\cap D) \subset f(C)\cap f(D);\\
+    &f(A\cup B) = f(A)\cup f(B);\\
+    &f(A\cap B) \subset f(A)\cap f(B);\\
     &f^{-1}(P\cup Q) = f^{-1}(P)\cup f^{-1}(Q);\\
     &f^{-1}(P\cap Q) = f^{-1}(P)\cap f^{-1}(Q).
 \end{align}
 
+\subsection{}
+Give an example of $f: X\rightarrow Y$, $A$, and $B$ where $f(A \cap B) \neq f(A) \cap f(B)$. Hint: design a case where $A$ and $B$ are disjoint but $f(A)$ and $f(B)$ are not disjoint.
+
+\subsection{}
+Show that if $f$ is injective, then $f(A\cap B) = f(A) \cap f(B)$.
+
+
+% \section{}
+% Show that the following two statements are equivalent:
+
+% \subsection{}
+% \begin{enumerate}
+%     \item $f: B\to C$ is injective.
+%     \item For any set $A$ and any two functions $g,h: A\to B$ such that $f\circ g = f\circ h$, we must have $g=h$. 
+% \end{enumerate}
+
+% \subsection{}
+% \begin{enumerate}
+%     \item $f: A\to B$ is surjective.
+%     \item For any set $C$ and any two functions $g,h: B\to C$ such that $g\circ f = h\circ f$, we must have $g=h$. 
+% \end{enumerate}
+
 \section{}
-Let $f: X\to Y$ be a function between sets. Let $A,B\subset X$ be subsets. 
+Let $f: A\to B$ and $g: B\to C$ be two bijective functions.  Show $g\circ f$ is bijective.
 
-\subsection{}
-Show
-\begin{align}
-    f(A)/f(B) \subset f(A/B).
-\end{align}
 
-\subsection{}
-Give an example function that shows the other direction is false.
+
+% \section{}
+% Let $f: X\to Y$ be a function between sets. Let $A,B\subset X$ be subsets. 
+
+% \subsection{}
+% Show
+% \begin{align}
+%     f(A)/f(B) \subset f(A/B).
+% \end{align}
+
+% \subsection{}
+% Give an example function that shows the other direction is false.
 
 \section{}
 Let $f: X\to Y$ be a function between sets and $U\subset A$ and $V\subset B$. 
@@ -98,12 +163,12 @@ Show that
 \subsection{}
 Give an example that shows the above relation cannot be equality.
 
-\section{}
-If two sets $A$ and $B$ have the same cardinally, we write $A\sim B$. Show that $\sim$ is an equivalence relation on sets.
+% \section{}
+% If two sets $A$ and $B$ have the same cardinally, we write $A\sim B$. Show that $\sim$ is an equivalence relation on sets.
 
-\section{}
-Decide for which natural numbers the inequality $2n > n^2$ is true.
-Prove your claim using induction.
+% \section{}
+% Decide for which natural numbers the inequality $2n > n^2$ is true.
+% Prove your claim using induction.
 
     
     
