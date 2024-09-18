@@ -20,7 +20,7 @@
 \newcommand\course{MATH-UA.0325\\Analysis}
 \newcommand\hwnumber{2}                  % <-- homework number
 \newcommand\NetIDa{Ryan Sh\`iji\'e D\`u} 
-\newcommand\NetIDb{February 9th, 2024}
+\newcommand\NetIDb{September 19th, 2024}
 \pagestyle{fancyplain}
 \headheight 35pt
 \lhead{\NetIDa\\\NetIDb}
@@ -46,33 +46,33 @@
 \input{../../command.tex}
 \begin{document}
 
-\section{Defining the rationals}
-[5.4.2 of \cite{Hajlasz_18}] Take the set $\mcal{R} = \{(a,b), a,b\in\mathbb{Z}, b\neq 0\}$. For $(a,b)$ and $(c,d)\in\mcal{R}$, we write $(a,b)\sim(c,d)$ if $ad=bc$. Check if this is an equivalence relation.
+% \section{Defining the rationals}
+% [5.4.2 of \cite{Hajlasz_18}] Take the set $\mcal{R} = \{(a,b), a,b\in\mathbb{Z}, b\neq 0\}$. For $(a,b)$ and $(c,d)\in\mcal{R}$, we write $(a,b)\sim(c,d)$ if $ad=bc$. Check if this is an equivalence relation.
 
-\section{}
-Let $(F,+,\cdot,<)$ be an ordered field, show
+% \section{}
+% Let $(F,+,\cdot,<)$ be an ordered field, show
 
-\subsection{}
-Take $a\in F$ such that $a>0$, then 
-\begin{align}
-    a^{-1}>0.
-\end{align}
+% \subsection{}
+% Take $a\in F$ such that $a>0$, then 
+% \begin{align}
+%     a^{-1}>0.
+% \end{align}
 
-\subsection{}
-Take $a,b\in F$ such that $0<a<b$, then 
-\begin{align}
-    0<b^{-1}<a^{-1}.
-\end{align}
+% \subsection{}
+% Take $a,b\in F$ such that $0<a<b$, then 
+% \begin{align}
+%     0<b^{-1}<a^{-1}.
+% \end{align}
 
-\subsection{}
-Take $a,b,c\in F$, show that 
-\begin{align}
-    2ab \leq a^2+b^2
-\end{align}
-and
-\begin{align}
-    ab+bc+ac \leq a^2+b^2+c^2.
-\end{align} 
+% \subsection{}
+% Take $a,b,c\in F$, show that 
+% \begin{align}
+%     2ab \leq a^2+b^2
+% \end{align}
+% and
+% \begin{align}
+%     ab+bc+ac \leq a^2+b^2+c^2.
+% \end{align} 
 
 \section{}
 Let $S$ be a non-empty bounded subset of $\mathbb{R}$.
@@ -93,17 +93,26 @@ Let $S$ and $T$ be two non-empty bounded subsets of $\mathbb{R}$ and let
 
 \subsection{} Prove that $\sup(S\cup T) = \max\{\sup(S),\sup(T)\}$. 
 
+% \section{}
+% [1.2.9 of \cite{Lebl_23}] Let $A$ and $B$ be two non-empty bounded subsets of $\mathbb{R}$ and let
+% \begin{align}
+%     S = \{a+b:a\in A \text{ and } b\in B\}.
+% \end{align}
+% \subsection{} Prove that $\sup S = \sup A+\sup B$.
+% \subsection{} Prove that $\inf S = \inf A+\inf B$.
+
 \section{}
-[1.2.9 of \cite{Lebl_23}] Let $A$ and $B$ be two non-empty bounded subsets of $\mathbb{R}$ and let
-\begin{align}
-    S = \{a+b:a\in A \text{ and } b\in B\}.
-\end{align}
-\subsection{} Prove that $\sup S = \sup A+\sup B$.
-\subsection{} Prove that $\inf S = \inf A+\inf B$.
+Let $F\subset \mathbb{R}$ be a closed set bounded above. Prove that $\sup F\in F$.
 
 \section{}
 \subsection{} Show that if a sequence $\{a_n\}_{n\in\mathbb{N}}$ of real numbers converges to $a$, then the sequence $\{|a_n|\}_{n\in\mathbb{N}}$ converges to $|a|$. 
 \subsection{} Show (via an example) that the converse is not true.
+
+\section{}
+Let's work with the vector space $\mathbb{R}^n$ and $A$ a non-empty subset of $\mathbb{R}^n$. Prove that $A$ is open if and only if it can be written as the union of a family of open balls of the form
+\begin{align}
+    B_r(x) = \{y\in \mathbb{R}^n: \norm{x-y}_2< r\}. 
+\end{align}
 
 
 \vfill
